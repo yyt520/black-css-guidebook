@@ -1,0 +1,44 @@
+@import '../../../common.less';
+
+.pseudo {
+  &-clear-float {
+    zoom: 1;
+  }
+
+  &-clear-float:after {
+    display: block;
+    height: 0;
+    // 确保空白字符是非浮动的独立区块
+    clear: both;
+    content: '';
+    // 伪类内容不可见
+    visibility: hidden;
+  }
+
+  &-box1 {
+    width: 200px;
+    background: @bg-container;
+
+    .left {
+      float: left;
+      width: 25%;
+      height: 50px;
+      background: @bg-left;
+    }
+
+    .right {
+      float: right;
+      width: 25%;
+      height: 75px;
+      background: @bg-right;
+    }
+  }
+
+  &-box2 {
+    .centered;
+    width: 200px;
+    height: 100px;
+    margin-top: 10px;
+    background: @bg-secondary;
+  }
+}

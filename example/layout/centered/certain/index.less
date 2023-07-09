@@ -1,0 +1,54 @@
+@import '../../../common.less';
+
+.both-negative {
+  &-common {
+    width: 100px;
+    height: 100px;
+    background: #bae7ff;
+  }
+
+  &-parent {
+    position: relative;
+  }
+
+  &-child {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    // 左上端点垂直居中
+    top: 50%;
+    left: 50%;
+    // 利用负 margin 偏移自身一半的宽高
+    margin-top: calc(-0.5 * 50px);
+    margin-left: calc(-0.5 * 50px);
+    // 需要使用标准盒模型
+    box-sizing: content-box;
+    background: @bg-item;
+  }
+}
+
+.both-auto {
+  &-common {
+    width: 100px;
+    height: 100px;
+    background: @bg-container;
+  }
+
+  &-parent {
+    position: relative;
+  }
+
+  &-child {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    // 需要使用标准盒模型
+    box-sizing: content-box;
+    background: @bg-item;
+  }
+}
